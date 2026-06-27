@@ -1,0 +1,11 @@
+:root { --bg:#fff7fb; --card:rgba(255,255,255,.86); --text:#291320; --muted:#7f6271; --pink:#ff7ab6; --pink2:#ffd3e7; --shadow:0 20px 60px rgba(255,122,182,.22); }
+* { box-sizing:border-box; } body { margin:0; min-height:100vh; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--text); background:radial-gradient(circle at 20% 10%, #ffe3f0 0, transparent 30%), radial-gradient(circle at 80% 30%, #fff0b8 0, transparent 24%), linear-gradient(160deg,#fff7fb,#fff); }
+.phone { width:min(440px,100%); margin:0 auto; padding:24px 16px 40px; }
+.card { background:var(--card); border:1px solid rgba(255,122,182,.22); border-radius:28px; padding:22px; margin:14px 0; box-shadow:var(--shadow); backdrop-filter:blur(12px); }
+.hero { padding-top:28px; min-height:220px; } .pill { display:inline-flex; padding:8px 12px; border-radius:999px; background:var(--pink2); color:#8a315d; font-size:13px; font-weight:700; }
+h1 { font-size:34px; line-height:1.05; margin:18px 0 12px; } h2 { font-size:19px; margin:0 0 10px; } p, li { color:var(--muted); line-height:1.55; }
+button { width:100%; border:0; border-radius:18px; padding:15px 18px; margin-top:10px; background:var(--pink); color:white; font-size:16px; font-weight:800; box-shadow:0 12px 28px rgba(255,122,182,.34); }
+button.secondary { background:#fff; color:#b23e74; border:1px solid #ffd0e5; box-shadow:none; } button:disabled { opacity:.5; } .soft { background:rgba(255,241,248,.78); }
+.streak { display:flex; align-items:baseline; gap:10px; margin-top:16px; } .streak span { font-size:42px; font-weight:900; color:#d64287; } .streak small { color:var(--muted); } .hidden { display:none; }
+label { display:block; margin:14px 0 6px; font-weight:700; } input, textarea { width:100%; border:1px solid #ffd0e5; border-radius:16px; padding:13px 14px; font:inherit; color:var(--text); background:#fff; outline:none; } textarea { resize:vertical; }
+.grid2 { display:grid; grid-template-columns:1fr 1fr; gap:12px; } .check { display:flex; align-items:center; gap:10px; color:var(--muted); } .check input { width:auto; } .log { font-size:13px; color:var(--muted); padding:10px 0; border-bottom:1px solid rgba(255,122,182,.18); }

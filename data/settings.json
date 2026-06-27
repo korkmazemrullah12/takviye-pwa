@@ -1,0 +1,15 @@
+{
+  "enabled": true,
+  "hour": "13",
+  "minute": "53",
+  "title": "Takviye zamanı güzelim 🤍",
+  "body": "Takviyelerini almayı unutma. Kendine iyi bakman benim için önemli 🫶",
+  "randomMessages": [
+    "Takviyelerini almayı unutma güzelim 🤍",
+    "Kendine iyi bakma saati geldi 🫶",
+    "Bugünün mini görevi: takviyelerini almak.",
+    "Su + takviyeler = görev tamam güzelim.",
+    "Ben hatırlatırım, sen sağlığına bakarsın :)"
+  ],
+  "useRandomMessage": true
+}

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Takviye Admin</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <main class="phone">
+    <section class="card hero"><div class="pill">gizli panel</div><h1>Hatırlatma ayarları</h1><p>Buradan saati, mesajları ve sistemi yönetebilirsin.</p></section>
+    <section class="card">
+      <label>Admin key</label><input id="key" placeholder="ADMIN_KEY" />
+      <div class="grid2"><div><label>Saat</label><input id="hour" type="number" min="0" max="23" /></div><div><label>Dakika</label><input id="minute" type="number" min="0" max="59" /></div></div>
+      <label>Başlık</label><input id="title" />
+      <label>Ana mesaj</label><textarea id="body" rows="3"></textarea>
+      <label>Rastgele mesajlar</label><textarea id="randomMessages" rows="7"></textarea>
+      <label class="check"><input id="enabled" type="checkbox" />Aktif</label>
+      <label class="check"><input id="useRandomMessage" type="checkbox" />Mesajı listeden rastgele seç</label>
+      <button id="saveBtn">Kaydet</button>
+      <button id="testBtn" class="secondary">Test bildirimi gönder</button>
+      <p id="adminStatus"></p>
+    </section>
+    <section class="card soft"><h2>Durum</h2><p id="subscriberCount">Abone sayısı: -</p><div id="logs"></div></section>
+  </main>
+  <script src="/admin.js"></script>
+</body>
+</html>
