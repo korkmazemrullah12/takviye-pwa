@@ -1,7 +1,7 @@
 self.addEventListener("install", event => self.skipWaiting());
 self.addEventListener("activate", event => event.waitUntil(self.clients.claim()));
 self.addEventListener("push", event => {
-  let data = { title: "Takviye zamanı 🤍", body: "Takviyelerini almayı unutma.", url: "/" };
+  let data = { title: "Takviye zamanı 🤍", body: "Takviyelerini almayı unutma. Kendine iyi bakman çok önemli 🫶", url: "/" };
   try { if (event.data) data = { ...data, ...event.data.json() }; } catch {}
   event.waitUntil(self.registration.showNotification(data.title, {
     body: data.body,

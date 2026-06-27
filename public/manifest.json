@@ -1,7 +1,7 @@
 {
-  "name": "Takviye Hatırlatıcısı",
-  "short_name": "Takviye",
-  "description": "Günlük takviye hatırlatıcı",
+  "name": "Düzenli",
+  "short_name": "Düzenli",
+  "description": "Günlük küçük hatırlatıcı",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

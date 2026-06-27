@@ -36,14 +36,17 @@ const defaultSettings = {
   enabled: true,
   hour: "21",
   minute: "30",
-  title: "Takviye zamanı güzelim 🤍",
-  body: "Takviyelerini almayı unutma. Kendine iyi bakman benim için önemli 🫶",
+  title: "Takviye zamanı 🤍",
+  body: "Takviyelerini almayı unutma. Kendine iyi bakman çok önemli 🫶",
   randomMessages: [
-    "Takviyelerini almayı unutma güzelim 🤍",
-    "Kendine iyi bakma saati geldi 🫶",
+    "Takviyelerini almayı unutma. Kendine iyi bakman çok önemli 🫶",
     "Bugünün mini görevi: takviyelerini almak.",
-    "Su + takviyeler = görev tamam güzelim.",
-    "Ben hatırlatırım, sen sağlığına bakarsın :)"
+    "Takviye vakti geldi 🤍",
+    "Su içmeyi de unutma.",
+    "Düzenli kalma zamanı.",
+    "Bugünün sağlık görevi: takviyeler + su.",
+    "Kendini ihmal etme.",
+    "Küçük bir hatırlatma: takviyelerini alma zamanı."
   ],
   useRandomMessage: true
 };

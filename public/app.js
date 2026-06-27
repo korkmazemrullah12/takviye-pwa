@@ -47,6 +47,6 @@ takenBtn.addEventListener("click", async () => {
     streakCount.textContent = streak;
   }
   await fetch("/api/taken", { method: "POST" });
-  takenBtn.textContent = "Kaydettim, aferin sana 🫶";
+  takenBtn.textContent = "Bugünün kaydı tamamlandı 🫶";
 });
 init();
