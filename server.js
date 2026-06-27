@@ -110,9 +110,71 @@ app.post("/api/admin/settings", requireAdmin, (req, res) => {
 });
 
 app.get("/api/admin/status", requireAdmin, (req, res) => {
+  const subscriptions = readJson(SUBSCRIPTIONS_FILE, []);
+  const logs = readJson(LOGS_FILE, []);
+
+  const dayKey = (iso) => {
+    try {
+      return new Intl.DateTimeFormat("en-CA", {
+        timeZone: TZ,
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit"
+      }).format(new Date(iso));
+    } catch {
+      return String(iso).slice(0, 10);
+    }
+  };
+
+  const timeText = (iso) => {
+    try {
+      return new Intl.DateTimeFormat("tr-TR", {
+        timeZone: TZ,
+        hour: "2-digit",
+        minute: "2-digit"
+      }).format(new Date(iso));
+    } catch {
+      return "";
+    }
+  };
+
+  const todayKey = dayKey(new Date().toISOString());
+  const todayLogs = logs.filter(log => dayKey(log.at) === todayKey);
+  const todayPushes = todayLogs.filter(log => log.type === "push");
+  const todayTaken = todayLogs.filter(log => log.type === "taken");
+  const lastPush = todayPushes.at(-1) || null;
+  const lastTaken = todayTaken.at(-1) || null;
+
+  const days = [];
+  const now = new Date();
+  for (let i = 0; i < 7; i++) {
+    const d = new Date(now);
+    d.setDate(now.getDate() - i);
+    const key = dayKey(d.toISOString());
+    const dayLogs = logs.filter(log => dayKey(log.at) === key);
+    const taken = dayLogs.filter(log => log.type === "taken").at(-1) || null;
+    const push = dayLogs.filter(log => log.type === "push").at(-1) || null;
+
+    days.push({
+      date: key,
+      taken: Boolean(taken),
+      takenTime: taken ? timeText(taken.at) : null,
+      pushSent: Boolean(push),
+      pushTime: push ? timeText(push.at) : null
+    });
+  }
+
   res.json({
-    subscriberCount: readJson(SUBSCRIPTIONS_FILE, []).length,
-    lastLogs: readJson(LOGS_FILE, []).slice(-20).reverse()
+    subscriberCount: subscriptions.length,
+    today: {
+      date: todayKey,
+      taken: Boolean(lastTaken),
+      takenTime: lastTaken ? timeText(lastTaken.at) : null,
+      pushSent: Boolean(lastPush),
+      pushTime: lastPush ? timeText(lastPush.at) : null
+    },
+    last7Days: days,
+    lastLogs: logs.slice(-20).reverse()
   });
 });
 

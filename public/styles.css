@@ -9,3 +9,55 @@ button.secondary { background:#fff; color:#b23e74; border:1px solid #ffd0e5; box
 .streak { display:flex; align-items:baseline; gap:10px; margin-top:16px; } .streak span { font-size:42px; font-weight:900; color:#d64287; } .streak small { color:var(--muted); } .hidden { display:none; }
 label { display:block; margin:14px 0 6px; font-weight:700; } input, textarea { width:100%; border:1px solid #ffd0e5; border-radius:16px; padding:13px 14px; font:inherit; color:var(--text); background:#fff; outline:none; } textarea { resize:vertical; }
 .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:12px; } .check { display:flex; align-items:center; gap:10px; color:var(--muted); } .check input { width:auto; } .log { font-size:13px; color:var(--muted); padding:10px 0; border-bottom:1px solid rgba(255,122,182,.18); }
+
+
+.todayBox {
+  padding: 14px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, .72);
+  border: 1px solid rgba(255, 122, 182, .18);
+}
+
+.statusBig {
+  font-size: 22px;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+
+.statusBig.ok {
+  color: #2f8f5b;
+}
+
+.statusBig.wait {
+  color: #b36b00;
+}
+
+.statusSmall {
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.weekBox {
+  display: grid;
+  gap: 8px;
+}
+
+.weekRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, .72);
+  border: 1px solid rgba(255, 122, 182, .16);
+}
+
+.weekRow span {
+  color: var(--muted);
+}
+
+.weekRow strong {
+  color: var(--text);
+  white-space: nowrap;
+}
